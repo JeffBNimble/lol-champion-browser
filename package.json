@@ -1,0 +1,33 @@
+{
+  "name": "lol-champion-browser",
+  "version": "0.0.1",
+  "description": "A League of Legends champion browser",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffBNimble/lol-champion-browser.git"
+  },
+  "keywords": [
+    "nodejs",
+    "lol",
+    "expressjs"
+  ],
+  "author": "Jeff Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffBNimble/lol-champion-browser/issues"
+  },
+  "homepage": "https://github.com/JeffBNimble/lol-champion-browser#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}

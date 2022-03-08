@@ -23,3 +23,4 @@ from the previous branch.
 ## Branches
 * main : This is the default branch in the repository. It's empty and ready to be
 used to build the application
+* [alistar](./docs/alistar.md) : Setup the initial project structure, including the package.json file, some initial dependencies and some scaffolding to startup your service
