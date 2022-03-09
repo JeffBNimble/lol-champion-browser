@@ -1,4 +1,5 @@
 import express from 'express'
+import { registerApiRoutes } from './routes/apiRoutes.js'
 
 // For now, we're going to use port 8080 as our service port. A machine has 65,535 ports available.
 // The default port for http is 80 and the default port for https is 443. So if you were to type
@@ -22,6 +23,9 @@ function startServer() {
   // Create an ExpressJS application
   // It's not doing anything just yet
   const app = express()
+
+  // Register endpoints (also known as routes) that the application will respond to
+  registerApiRoutes(app, '/api')
 
   // Now, tell the ExpressJS application to listen on port 8080. As soon as the service
   // starts, our code logs a debug message to the console telling us that the service has

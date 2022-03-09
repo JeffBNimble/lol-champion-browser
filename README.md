@@ -24,3 +24,4 @@ from the previous branch.
 * main : This is the default branch in the repository. It's empty and ready to be
 used to build the application
 * [alistar](./docs/alistar.md) : Setup the initial project structure, including the package.json file, some initial dependencies and some scaffolding to startup your service
+* [blitzcrank](./docs/blitzcrank.md) : Design the service API and create some ExpressJS routes
