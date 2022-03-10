@@ -25,3 +25,4 @@ from the previous branch.
 used to build the application
 * [alistar](./docs/alistar.md) : Setup the initial project structure, including the package.json file, some initial dependencies and some scaffolding to startup your service
 * [blitzcrank](./docs/blitzcrank.md) : Design the service API and create some ExpressJS routes
+* [corki](./docs/corki.md) : Create a Data Dragon API client, fetch, parse and cache the data and return it in our route handlers
