@@ -22,7 +22,7 @@ function registerChampionsRoutes() {
   // Let's setup another handlere for a route to return champion data for
   // a specific champion using a /champions/:champion route. We haven't yet created
   // this type of route yet. It contains a route parameter that gets filled in with
-  // the name of the champion that was requested so that we can use it in our route
+  // the id of the champion that was requested so that we can use it in our route
   // handler
   router.get('/:champion', handleGetChampion)
 
@@ -44,7 +44,13 @@ async function handleGetChampions(request, response) {
   // when we build our front end app, so we'll address that part later. For now,
   // just return everything.
   const championData = await getChampionData()
-  response.json(championData)
+
+  // This function is used to transform the mass of champions data into a subset
+  // of this because this particular API doesn't need to return all of the data
+  // from Data Dragon.
+  const transformed = transformChampions(Object.values(championData.data))
+
+  response.json(transformed)
 }
 
 // This is the handleGetChampion route handler, which will get called by
@@ -54,13 +60,13 @@ async function handleGetChampions(request, response) {
 async function handleGetChampion(request, response) {
   // Since the route this is handling has a route parameter (:champion), let's
   // get that out
-  const championName = request.params.champion
+  const championID = request.params.champion
 
   // Note that the champion data from Data Dragon has properties for the champion
-  // name in a specific case where the capitalization matters. If a request
+  // id in a specific case where the capitalization matters. If a request
   // is made to this route which differs in case, this code won't find the champion.
   // We'll address this later so that if a requestor asks for /champions/aatrox or
-  // /champions/Aatrox, it won't matter. For now, the champion name must match
+  // /champions/Aatrox, it won't matter. For now, the champion id must match
   // the exact case of the data.
   const championData = await getChampionData()
 
@@ -68,13 +74,64 @@ async function handleGetChampion(request, response) {
   // response, so look it up there. If not found, we want to return an error
   // to the requestor. HTTP status code 404, means Not Found, so we want to return
   // a 404 error if we can't find the requested champion
-  const champion = championData.data[championName]
+  const champion = championData.data[championID]
   if (!champion) {
-    response.status(404).send({error: `champion ${championName} not found`})
+    response.status(404).send({error: `champion ${championID} not found`})
   } else {
-    response.json(champion)
+    response.json(transformChampion(champion))
   }
   
+}
+
+// This function transforms the mass of data from Data Dragon into only
+// what is needed for these API routes.
+function transformChampions(champions) {
+  // Here I use  the Array.reduce function, which is somewhat difficult to understand.
+  // You can read about it here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+  return champions.reduce((transformed, champion) => {
+    transformed.push(transformChampion(champion))
+    return transformed
+  }, [])
+
+  // Here is the traditional way of doing the same thing
+  //let transformed = []
+  //for (let i = 0; i < champions.length; i++) {
+  //  transformed.push(transformChampion(champions[i]))
+  //}
+  //return transformed
+}
+
+// This function transforms a single champion by taking the giant mass of champion data
+// and trimming it down to only what we need in this API, thereby greatly simplifying
+// what the API clients get back in response.
+function transformChampion(champion) {
+  // This is called object destructuring. You can read about it here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+  // Notice that I'm using the squareImageURL, which is what we derived and set in the Data Dragon API Client.
+  const { id, name, title, blurb, tags, squareImageURL } = champion
+
+  // These lines are the traditional equivalent of the single line above
+  // const id = champion.id
+  // const name = champion.name
+  // const title = champion.title
+  // const blurb = champion.blurb
+  // const tags = champion.tags
+  // const squareImageURL = champion.squareImageURL
+
+  // This line simply creates a new object with the properties that got destructured
+  // from the statement above. This object contains only a subset of all the available
+  // properties. This is the ECMAScript 2015 shorthand way of creating an object.
+  // Read more about that here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
+  return { id, name, title, blurb, tags, squareImageURL }
+  
+  // These lines are the traditional equivalent of the line above
+  // return {
+  //   id: id,
+  //   name: name,
+  //   title: title,
+  //   blurb: blurb,
+  //   tags: tags,
+  //   squareImageURL: squareImageURL
+  // }
 }
 
 export { registerChampionsRoutes }
