@@ -1,11 +1,11 @@
 {
-  "name": "lol-champion-browser",
+  "name": "lol-champion-browser-service",
   "version": "0.0.1",
-  "description": "A League of Legends champion browser",
+  "description": "A League of Legends champion browser service",
   "main": "index.js",
   "type": "module",
   "directories": {
-    "doc": "docs"
+    "doc": "../docs"
   },
   "scripts": {
     "start": "node .",

@@ -77,7 +77,7 @@ handlers to simply return an empty array. If you type in the same code I've writ
 visit any of the API's that have routes registered, then you'll see an empty array in response in
 the browser.
 
-Check out everything I've written in the [routes folders](/src/routes). There are several .js
+Check out everything I've written in the [routes folders](/lol-champion-browser-service/src/routes). There are several .js
 files and folders here that correspond to the structure of the API routes.
 
 When you register a route in ExpressJS, you must setup a route handler for that route. What that

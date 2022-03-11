@@ -164,14 +164,14 @@ confusing to group all of that together.
 So, I've made an api_clients folder to contain Javascript modules for API clients. Each
 API client module will contain code relating to the requests made against a specific target.
 It should then be obvious why I have a Javascript module called 
-[dataDragon.js](/src/api_clients/dataDragon.js) inside the [api_clients](/src/api_clients) folder.
+[dataDragon.js](/lol-champion-browser-service/src/api_clients/dataDragon.js) inside the [api_clients](/src/api_clients) folder.
 
 This Javascript module will export functions that allow us to make requests against the
 Data Dragon API. For this app, we only have one API client. For most other apps, you'll
 have one for each service that your service communicates with.
 
 ### The Data Dragon API Client
-As previously mentioned, I've written an [API client](/src/api_clients/dataDragon.js) for Data Dragon. It exports a single
+As previously mentioned, I've written an [API client](/lol-champion-browser-service/src/api_clients/dataDragon.js) for Data Dragon. It exports a single
 function for gettingChampionData(). Study this code. It's responsible for conditionally
 fetching, parsing and storing (caching) the data it fetches from Data Dragon. It's well commented,
 so you should learn from reading it.
@@ -188,7 +188,7 @@ fetch is async.
 
 ## Champion Routes
 Before, we just returned an empty array from our base /champions route handler. Well, we
-now have the ability to return real data. So, checkout the [championRoutes.js](/src/routes/v1/champions/championsRoutes.js)
+now have the ability to return real data. So, checkout the [championRoutes.js](/lol-champion-browser-service/src/routes/v1/champions/championsRoutes.js)
 module and you'll see I replaced the return of the empty array with a call to the
 Data Dragon API client to getChampionData(). Remember that this is async, because fetch
 is async, so we have to use await when we call it. The first caller of this function will
