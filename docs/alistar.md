@@ -82,9 +82,9 @@ You can see what else node can do by typing ```node --help```. When you do this,
 spit out the command-line options you can pass to node.
 
 ### Create the scaffolding to create and start the service
-If you check out my [index.js](./index.js), you'll see that it uses nodemon to load and
-execute the ```dev.js``` module. Check out [dev.js](./dev.js) and you'll see that it loads
-the module in [./src/index.js](./src/index.js), which is a module that declares and exports
+If you check out my [index.js](/index.js), you'll see that it uses nodemon to load and
+execute the ```dev.js``` module. Check out [dev.js](/dev.js) and you'll see that it loads
+the module in [/src/index.js](/src/index.js), which is a module that declares and exports
 the ```startServer``` function. I've put all sorts of comments in the code. Be sure and read
 through that to understand what is going on in the code.
 
