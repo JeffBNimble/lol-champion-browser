@@ -21,7 +21,7 @@ Download and install the latest version if needed.
 ### Initialize your project
 To do this, simply run ```npm init```. You can take defaults for most of the options,
 but some need to be filled in. You can see what I've specified for the prompts by
-checking out the generated [package.json](../package.json).
+checking out the generated [package.json](/package.json).
 
 ### Specify the Javascript module type
 A Javascript module is essentially a .js file. Every .js file in your application is
