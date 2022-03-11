@@ -68,7 +68,7 @@ add a property to the Data Dragon response that we store/cache in our service. T
 are all skin-specific, and we'll deal with skins and skin images later.
 
 ### Deriving the full URL to the square champion image
-Checkout the change I made to the [Data Dragon API Client](/src/api_clients/dataDragon.js)
+Checkout the change I made to the [Data Dragon API Client](/lol-champion-browser-service/src/api_clients/dataDragon.js)
 to derive the square image URL using other properties available in the champion data from
 Data Dragon.  I have added a new property to each champion in the cached data.
 
@@ -133,7 +133,7 @@ something more meaningful. The transformation process takes the full Data Dragon
 with all of its data and trims it down into an object that contains just a few properties
 that we will use to render the list of champions in the UI.
 
-See the [Champion Route Handlers](/src/routes/v1/champions/championsRoutes.js) to see
+See the [Champion Route Handlers](/lol-champion-browser-service/src/routes/v1/champions/championsRoutes.js) to see
 the changes. You may notice that I used some potentially confusing code to accomplish this.
 I also put in some code comments to show you the more traditional way of doing the same thing.
 I also included some links for you to go read and learn about these new concepts.
