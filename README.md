@@ -41,3 +41,4 @@ used to build the application
 * [blitzcrank](./docs/blitzcrank.md) : Design the service API and create some ExpressJS routes
 * [corki](./docs/corki.md) : Create a Data Dragon API client, fetch, parse and cache the data and return it in our route handlers
 * [draven](./docs/draven.md) : Add some derived attributes to our fetched champion data, transform our /champions response into something usable
+* [ekko](./docs/ekko.md) : Setup the initial structure of our UI (User Interface) developed using React
