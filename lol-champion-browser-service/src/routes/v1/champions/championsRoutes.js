@@ -107,7 +107,7 @@ function transformChampions(champions) {
 function transformChampion(champion) {
   // This is called object destructuring. You can read about it here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
   // Notice that I'm using the squareImageURL, which is what we derived and set in the Data Dragon API Client.
-  const { id, name, title, blurb, tags, squareImageURL } = champion
+  const { id, name, title, blurb, tags, squareImageURL, loadingImageURL } = champion
 
   // These lines are the traditional equivalent of the single line above
   // const id = champion.id
@@ -116,12 +116,13 @@ function transformChampion(champion) {
   // const blurb = champion.blurb
   // const tags = champion.tags
   // const squareImageURL = champion.squareImageURL
+  // const loadingImageURL = champion.loadingImageURL
 
   // This line simply creates a new object with the properties that got destructured
   // from the statement above. This object contains only a subset of all the available
   // properties. This is the ECMAScript 2015 shorthand way of creating an object.
   // Read more about that here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
-  return { id, name, title, blurb, tags, squareImageURL }
+  return { id, name, title, blurb, tags, squareImageURL, loadingImageURL }
   
   // These lines are the traditional equivalent of the line above
   // return {
@@ -131,6 +132,7 @@ function transformChampion(champion) {
   //   blurb: blurb,
   //   tags: tags,
   //   squareImageURL: squareImageURL
+  //   loadingImageURL: loadingImageURL
   // }
 }
 

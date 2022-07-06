@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.ChampionsList {
+  background-color: orange;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 55px;
+  column-gap: 55px;
+  flex: 1;
+  overflow: auto;
+}
+
+.ChampionPanel {
+  cursor: pointer;
+  background-color: black;
+  height: 218px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  height: 100px;
+  background-color: green;
+}
+
+.image {
+  height: 218px;
+  width: 120px;
+  border: 1px solid white;
+}
+
+.caption {
+  height: 20px;
+  width: 120px;
+  background-color: blue;
+}
