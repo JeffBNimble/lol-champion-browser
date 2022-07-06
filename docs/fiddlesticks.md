@@ -141,7 +141,7 @@ show either the list of champions shown as images or when you click
 on any champion, you'll transition to the skins view where you can
 scroll through the skins for that champion one skin at a time.
 
-To be more specific and to drive this point home, we are initially focusing
+To be more specific and to drive this point home, we are initially focusing on
 building the champions list feature of the app. Inside the list, we will
 have a header space where we will eventually add a component to allow us
 to filter the list of champions.
@@ -149,6 +149,8 @@ to filter the list of champions.
 ### It's rectangles everywhere
 I said we were initially focusing on rectangles and not content. Below is
 what our app looks like at this stage. You can see nothing but rectangles.
+I warned you it was going to be ugly. I have not expended any effort to make
+the app look nice yet.
 
 ![UI Rectangles](./images/ui-rectangles.jpg)
 
@@ -216,7 +218,7 @@ specific champion.
 For now, it just displays the list of champions. Look at the 
 [component.js](/lol-champion-browser-ui/src/feature/champions/component.js) file
 for the Champion Page and you'll see it too is quite simple. It imports the
-ChampionsList component and render it. Note however that I create an array of
+ChampionsList component and renders it. Note however that I create an array of
 "champion" objects, each with only a name property that gets passed into
 the ChampionsList component function as part of properties.
 
@@ -282,12 +284,12 @@ for details.
 
 Specifically in dataDragon.js, I:
 
-* Changed the name of the function at Line 49 as well as the body of the function
-* Change the name of the function at Line 33 to reference the new function name
+* Changed the name of the function at [Line 49](/lol-champion-browser-service/src/api_clients/dataDragon.js#L49) as well as the body of the function
+* Change the name of the function at [Line 33](/lol-champion-browser-service/src/api_clients/dataDragon.js#L33) to reference the new function name
 
 And in championRoutes.js, I:
 
-* Changed Line 110 to destructure the imageLoadingURL property from the champion
-* Changed Line 125 to include the imageLoadingURL property in the response
+* Changed [Line 110](/lol-champion-browser-service/src/routes/v1/champions/championsRoutes.js#L110) to destructure the imageLoadingURL property from the champion
+* Changed [Line 125](/lol-champion-browser-service/src/routes/v1/champions/championsRoutes.js#L125) to include the imageLoadingURL property in the response
 
 
