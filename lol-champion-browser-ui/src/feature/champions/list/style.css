@@ -1,3 +1,9 @@
+/* This is where each "component" get styled. Notice that I use
+   class selectors to style each thing independently. Notice also, that I use Flexbox to layout
+   many of these components. Aside from the flex layouts, most of this styling is currently
+   background colors, borders and sizing just to make it obvious where the rectangles are when you
+   run the app.
+*/
 .container {
   display: flex;
   flex-direction: column;
@@ -15,6 +21,14 @@
   overflow: auto;
 }
 
+/* Why or how did I pick these dimensions 120px by 218px? First, I think I want to use the champion
+   loading images here. I know from researching that the champion loading images are 308px by 560px.
+   Using simple math, I calculated (roughly) what the height of the image should be if I wanted a width
+   of 120px. 308 divided by 560 is .55. So to get 218 (roughly), you divide 120 by .55. I chose 120px as
+   the width because it's big enough to show the image. I may tweak these dimensions in the future depending
+   upon how things look. But using this simple math formula allows me to retain the aspect ratio of the image
+   without causing it to skew.
+ */
 .ChampionPanel {
   cursor: pointer;
   background-color: black;

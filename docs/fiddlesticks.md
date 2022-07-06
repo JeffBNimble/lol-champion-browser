@@ -284,8 +284,9 @@ for details.
 
 Specifically in dataDragon.js, I:
 
-* Changed the name of the function at [Line 49](/lol-champion-browser-service/src/api_clients/dataDragon.js#L49) as well as the body of the function
-* Change the name of the function at [Line 33](/lol-champion-browser-service/src/api_clients/dataDragon.js#L33) to reference the new function name
+* Changed the name of the function at [Line 49](/lol-champion-browser-service/src/api_clients/dataDragon.js#L49)
+* Added [Line 61](/lol-champion-browser-service/src/api_clients/dataDragon.js#L61) to the `deriveImageURLs` function to derive `loadingImageURL` 
+* Changed the name of the function at [Line 33](/lol-champion-browser-service/src/api_clients/dataDragon.js#L33) to reference the new function name
 
 And in championRoutes.js, I:
 
