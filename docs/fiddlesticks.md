@@ -1,4 +1,4 @@
-# Ekko
+# Fiddlesticks
 ![Fiddlesticks](http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/Fiddlesticks.png)
 
 The Fiddlesticks branch is where we start breaking our application into rectangles:
