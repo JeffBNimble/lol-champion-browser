@@ -10,13 +10,13 @@
 }
 
 .ChampionsList {
-  background-color: orange;
+  background-color: black;
   padding: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   row-gap: 55px;
-  column-gap: 55px;
+  column-gap: 40px;
   flex: 1;
   overflow: auto;
 }
@@ -45,12 +45,57 @@
 
 .image {
   height: 218px;
-  width: 120px;
+  width: 126px;
   border: 1px solid white;
+}
+
+.image.highlight {
+  animation-name: imageHighlight;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+
+.image.unhighlight {
+  animation-name: imageUnhighlight;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+
+@keyframes imageHighlight {
+  from { border: 1px solid white; height: 218px; width: 126px; }
+  to { border: 1px solid dodgerblue; height: 223px; width: 136px; }
+}
+
+@keyframes imageUnhighlight {
+  from { border: 1px solid dodgerblue; height: 223px; width: 136px; }
+  to { border: 1px solid white; height: 218px; width: 126px; }
 }
 
 .caption {
   height: 20px;
-  width: 120px;
-  background-color: blue;
+  width: 118px;
+  padding: 5px;
+  background-color: white;
+}
+
+.caption.highlight {
+  animation-name: captionHighlight;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+
+.caption.unhighlight {
+  animation-name: captionUnhighlight;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+
+@keyframes captionHighlight {
+  from { background-color: white; font-weight: normal; font-style: normal; color: black; padding-left: 5px }
+  to { background-color: dodgerblue; font-weight: normal; font-style: italic; color: white; padding-left: 15px }
+}
+
+@keyframes captionUnhighlight {
+  from { background-color: dodgerblue; font-weight: normal; font-style: italic; color: white; padding-left: 15px }
+  to { background-color: white; font-weight: normal; font-style: normal; color: black; padding-left: 5px }
 }
